@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final counter = context.watch<CounterProvider>().counter;
+    final counter = context.watch<CounterNotifier>().counter;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: context.read<CounterProvider>().increment,
+        onPressed: context.read<CounterNotifier>().increment,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

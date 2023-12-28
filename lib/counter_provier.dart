@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CounterNotifier extends ChangeNotifier {
   int _counter = 0;
@@ -10,3 +11,5 @@ class CounterNotifier extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+final counterNotifier = ChangeNotifierProvider<CounterNotifier>((ref) => CounterNotifier());
